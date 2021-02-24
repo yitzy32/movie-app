@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
 # actor.save
-# 10.times do
-#   actor = Actor.new(first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name, known_for: FFaker::Movie.title)
-#   actor.save
-# end
+movie = Movie.new(title: "A bugs life", year: 1998, plot: "Looking into the life and struggles of a group of ants")
+movie.save
+movie = Movie.new(title: "The Incredibles", year: 2004, plot: "Family that has super powers comes out of hiding to fight bad guys")
+movie.save
+movie = Movie.new(title: "Monsters Inc", year: 2001, plot: "Monsters who fuel their economy by energy aquired from scaring children, switch to fueling their economy by making children laugh")
+movie.save
