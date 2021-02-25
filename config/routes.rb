@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get "/an_actor" => "actor#one_actor"
     get "/all_movies" => "movies#movies"
     get "/first_movie" => "movies#first_movie"
+    get "/last_bunch" => "actor#last_bunch"
   end
 end
