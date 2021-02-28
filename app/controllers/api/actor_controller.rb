@@ -4,6 +4,11 @@ class Api::ActorController < ApplicationController
     render "an_actor.json.jb"
   end
 
+  def seg_param
+    @name = params["name"]
+    render "seg_params.json.jb"
+  end
+
   def last_bunch
     @last_actors = Actor.last(5)
     render "last_actors.json.jb"
