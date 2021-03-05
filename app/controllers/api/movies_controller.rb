@@ -17,8 +17,11 @@ class Api::MoviesController < ApplicationController
       director: params[:director],
       english: params[:english] || true,
     )
-    @movie.save
-    render "show.json.jb"
+    if @movie.save
+      render "show.json.jb"
+    else
+      render json: { errors: @movie.errors.full_messages }
+    end
   end
 
   def update
