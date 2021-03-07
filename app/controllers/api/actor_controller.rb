@@ -1,6 +1,6 @@
 class Api::ActorController < ApplicationController
   def index
-    @actors = Actor.all
+    @actors = Actor.all.order("age desc")
     render "index.json.jb"
   end
 
@@ -26,12 +26,12 @@ class Api::ActorController < ApplicationController
 
   def update
     @actor = Actor.find_by(id: params[:id])
-    @actor.first_name = params[:first_name]
-    @actor.last_name = params[:last_name]
-    @actor.known_for = params[:known_for]
-    @actor.known_for = params[:known_for]
-    @actor.gender = params[:gender]
-    @actor.age = params[:age]
+    @actor.first_name = params[:first_name] || @actor.first_name
+    @actor.last_name = params[:last_name] || @actor.last_name
+    @actor.known_for = params[:known_for] || @actor.known_for
+    @actor.known_for = params[:known_for] || @actor.known_for
+    @actor.gender = params[:gender] || @actor.gender
+    @actor.age = params[:age] || @actor.age
     if @actor.save
       render "show.json.jb"
     else
