@@ -12,12 +12,15 @@ Rails.application.routes.draw do
     post "/actors" => "actor#create"
     patch "/actors/:id" => "actor#update"
     delete "/actors/:id" => "actor#destroy"
-  end
-  namespace :api do
+
     get "/movies" => "movies#index"
     get "/movies/:id" => "movies#show"
     post "/movies" => "movies#create"
     patch "/movies/:id" => "movies#update"
     delete "/movies/:id" => "movies#destroy"
+
+    post "/users" => "users#create"
+
+    post "/sessions" => "sessions#create"
   end
 end
